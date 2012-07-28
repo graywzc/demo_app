@@ -1,0 +1,34 @@
+2.1
+$cd ~/rails_projects
+$rails new demo_app
+$cd demo_ap 
+$git init
+$git add .
+$git commit -m "initial commit"
+$git remote add origin https://github.com/graywzc/demo_app.git
+$git push -u origin master
+
+2.2
+$ rails generate scaffold User name:string email:string
+$ rake db:migrate
+
+graywzc@legnayarg ~/rails_projects/demo_app $ rake -T db
+rake db:create          # Create the database from config/database.yml for...
+rake db:drop            # Drops the database for the current Rails.env (us...
+rake db:fixtures:load   # Load fixtures into the current environment's dat...
+rake db:migrate         # Migrate the database (options: VERSION=x, VERBOS...
+rake db:migrate:status  # Display status of migrations
+rake db:rollback        # Rolls the schema back to the previous version (s...
+rake db:schema:dump     # Create a db/schema.rb file that can be portably ...
+rake db:schema:load     # Load a schema.rb file into the database
+rake db:seed            # Load the seed data from db/seeds.rb
+rake db:setup           # Create the database, load the schema, and initia...
+rake db:structure:dump  # Dump the database structure to db/structure.sql....
+rake db:version         # Retrieves the current schema version number
+
+2.3
+$ rails generate scaffold Micropost content:string user_id:integer
+$ rake db:migrate
+$ rails console
+>> first_user = User.first
+>> first_user.microposts
